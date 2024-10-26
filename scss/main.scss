@@ -32,6 +32,7 @@ $border-radius-btn: 12px;
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   background-color: $primary-color;
   font-family: $font-stack;
 }
@@ -132,7 +133,7 @@ section {
     }
     .card-section {
       display: flex;
-      width: auto;
+      width: 100%;
       height: auto;
       flex-wrap: wrap;
       justify-content: center;
@@ -296,7 +297,11 @@ section {
       color: $text-color;
     }
     img {
-      object-fit: contain;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
     }
     p {
       text-align: center;
@@ -339,9 +344,7 @@ section {
       }
     }
 
-    // Tamaño de pantalla pequeño (móviles)
     @media (max-width: 480px) {
-      flex-direction: column; // Coloca las imágenes en columna en lugar de fila
       gap: 8px;
 
       img {

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   background-color: #81c784;
   font-family: "IBM Plex Sons" sans-serif;
 }
@@ -102,7 +103,7 @@ section .healthcare h2, section .furniture h2 {
 }
 section .healthcare .card-section, section .furniture .card-section {
   display: flex;
-  width: auto;
+  width: 100%;
   height: auto;
   flex-wrap: wrap;
   justify-content: center;
@@ -250,8 +251,12 @@ section .furniture .product-card {
   color: #9b4d26;
 }
 .about-us .mission-section img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .about-us .mission-section p {
   text-align: center;
@@ -292,7 +297,6 @@ section .furniture .product-card {
 }
 @media (max-width: 480px) {
   .gallery .gallery-images {
-    flex-direction: column;
     gap: 8px;
   }
   .gallery .gallery-images img {
