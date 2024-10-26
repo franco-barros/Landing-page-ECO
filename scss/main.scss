@@ -164,7 +164,7 @@ section {
           cursor: pointer;
           transition: fill 0.5s ease;
           &:hover {
-            fill: rgb(243, 111, 111);
+            fill: rgb(247, 134, 134);
           }
         }
       }
@@ -229,7 +229,7 @@ section {
           cursor: pointer;
           transition: fill 0.5s ease;
           &:hover {
-            fill: rgb(243, 111, 111);
+            fill: rgb(247, 134, 134);
           }
         }
       }
@@ -282,43 +282,98 @@ section {
 }
 
 .about-us {
-  padding-bottom: 60px;
+  padding-bottom: 40px;
+
   h2 {
-    padding-bottom: 60px;
+    padding-bottom: 40px;
     font-weight: bold;
+    font-size: 1.8em; // Tamaño de fuente adecuado para pantallas pequeñas
+    text-align: center;
   }
+
   .mission-section {
-    @include flexCenter(row, space-evenly, center);
-    .earth {
-      $text-color: #9b4d26;
-      width: 40vw;
-      display: flex;
-      gap: 40px;
-      color: $text-color;
-    }
-    img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+
+    .earth,
+    .innovation {
       width: 100%;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-    p {
-      text-align: center;
-      font-size: $paragraph-size;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: #9b4d26;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      p {
+        font-size: 1.3em;
+        text-align: center;
+        line-height: 1.5;
+        margin: 0 10px;
+      }
     }
   }
-  .innovation {
-    @extend .earth;
+
+  /* Ajustes para pantallas de tablet y más grandes */
+  @media (min-width: 768px) {
+    .mission-section {
+      flex-direction: row;
+      gap: 30px;
+
+      .earth,
+      .innovation {
+        width: 45%;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    padding-bottom: 80px;
+
+    h2 {
+      font-size: 2.5em;
+    }
+
+    .mission-section {
+      justify-content: space-evenly;
+      gap: 40px;
+
+      .earth,
+      .innovation {
+        width: 40vw;
+
+        img {
+          max-width: 350px;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      p {
+        font-size: 1.3em;
+      }
+    }
   }
 }
+
 .gallery {
   h2 {
     font-weight: bold;
     padding-bottom: 60px;
   }
   .gallery-images {
-    @include flexCenter(row, space-between, center);
+    @include flexCenter(row, space-evenly, center);
     gap: 16px;
 
     img {
@@ -334,13 +389,12 @@ section {
       }
     }
 
-    // Tamaño de pantalla mediano (tabletas)
     @media (max-width: 768px) {
       gap: 12px;
 
       img {
-        width: 40vw; // Ajusta el ancho de las imágenes
-        height: 35vh; // Ajusta la altura de las imágenes
+        width: 40vw;
+        height: 35vh;
       }
     }
 
@@ -354,7 +408,6 @@ section {
     }
   }
 
-  // Animación de escalado y opacidad
   @keyframes fadeImages {
     0%,
     100% {
@@ -370,15 +423,25 @@ section {
 .location {
   $text-color: #554d4a;
   color: $text-color;
+
   h2 {
     padding-bottom: 60px;
     padding-top: 60px;
     font-size: 2.5em;
   }
+
   .map {
     @include flexCenter(row, center, center);
     width: 100%;
+    max-width: 100vw;
     padding-bottom: 50px;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
   }
 
   h3,
@@ -393,9 +456,22 @@ footer {
   height: auto;
   padding: 40px;
   color: #554d4a;
+
   .social-media {
     @include flexCenter(row, center, center);
     gap: 40px;
     padding-bottom: 40px;
+
+    img {
+      width: 40px;
+      height: 42px;
+      filter: grayscale(100%) brightness(0) invert(1); // Cambia el color de los íconos
+      transition: filter 0.3s ease, transform 0.3s ease; // Suaviza la transición
+
+      &:hover {
+        filter: grayscale(100%) brightness(0.5) invert(1);
+        transform: scale(1.1);
+      }
+    }
   }
 }
