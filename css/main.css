@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffefe7;
+  background-color: #81c784;
   font-family: "IBM Plex Sons" sans-serif;
 }
 
@@ -10,12 +10,13 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  color: #7c6a0a;
+  color: #5d4037;
   padding: 15px;
 }
 nav p {
-  font-size: 1.5em;
+  font-size: 2rem;
   padding-left: 30px;
+  color: #8a5d1b;
 }
 nav .icons {
   display: flex;
@@ -33,7 +34,7 @@ article {
   justify-content: space-between;
   align-items: center;
   width: auto;
-  color: #7c6a0a;
+  color: #5d4037;
   padding-left: 45px;
   padding-right: 45px;
   padding-top: 70px;
@@ -57,18 +58,29 @@ article button {
   background: none;
   border-style: none;
   width: 12vw;
-  padding: 20px;
-  background-color: #fa9500;
-  border-radius: 35px;
+  padding: 15px 20px;
+  cursor: pointer;
+  background-color: #ffcc80;
+  border: none;
+  border-radius: 12px;
   color: white;
   font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 article button:hover {
-  transform: scale(1.3);
+  background-color: #ffe0b3;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
 article img {
   width: 25vw;
   border-radius: 19px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+article img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 section {
@@ -77,7 +89,7 @@ section {
   padding: 60px;
 }
 section h2 {
-  color: #7c6a0a;
+  color: #5d4037;
   font-size: 2em;
 }
 section .healthcare, section .furniture {
@@ -94,7 +106,6 @@ section .healthcare .card-section, section .furniture .card-section {
   height: auto;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   -moz-column-gap: 150px;
        column-gap: 150px;
   row-gap: 80px;
@@ -102,8 +113,8 @@ section .healthcare .card-section, section .furniture .card-section {
 section .healthcare .product-card, section .furniture .product-card {
   width: 14vw;
   height: auto;
-  background-color: #ffdac6;
-  color: #7c6a0a;
+  background-color: #e6f4ea;
+  color: #5d4037;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -132,7 +143,6 @@ section .healthcare .product-card .product-image, section .furniture .product-ca
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
 }
 section .healthcare .product-card .product-image img, section .furniture .product-card .product-image img {
@@ -149,19 +159,19 @@ section .healthcare .product-card .product-image img:hover, section .furniture .
 section .healthcare .product-card .product-image h3, section .furniture .product-card .product-image h3 {
   margin-top: 10px;
   font-size: 1.3em;
-  color: #7c6a0a;
+  color: #5d4037;
 }
 section .healthcare .product-card .product-image p, section .furniture .product-card .product-image p {
   font-size: 1em;
-  color: #7c6a0a;
+  color: #5d4037;
   margin-top: 5px;
   line-height: 1.4;
 }
 section .healthcare .product-card, section .furniture .product-card {
   width: 14vw;
   height: auto;
-  background-color: #ffdac6;
-  color: #7c6a0a;
+  background-color: #e6f4ea;
+  color: #5d4037;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -207,16 +217,16 @@ section .healthcare .product-card .product-image img:hover, section .furniture .
 section .healthcare .product-card .product-image h3, section .furniture .product-card .product-image h3 {
   margin-top: 10px;
   font-size: 1.3em;
-  color: #7c6a0a;
+  color: #5d4037;
 }
 section .healthcare .product-card .product-image p, section .furniture .product-card .product-image p {
   font-size: 1em;
-  color: #7c6a0a;
+  color: #5d4037;
   margin-top: 5px;
   line-height: 1.4;
 }
 section .furniture .product-card {
-  background-color: #babd8d;
+  background-color: #c08834;
   color: white;
 }
 
@@ -291,7 +301,7 @@ section .furniture .product-card {
 }
 
 footer {
-  background-color: #fa9500;
+  background-color: #ffcc80;
   width: 100%;
   height: auto;
   padding: 40px;
